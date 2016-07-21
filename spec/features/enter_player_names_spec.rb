@@ -1,12 +1,8 @@
+require 'spec_helper'
 
-
-RSpec.feature "Battle", :type=> :feature do
+feature "Battle" do
   scenario "users need to enter both players names" do
-    visit ('/')
-
-    fill_in 'player_one', :with=> 'Bart'
-    fill_in 'player_two', :with=> 'Victor'
-    click_button('submit')
+    sign_in_and_play
     expect(page).to have_content'Bart vs. Victor'
   end
 end
