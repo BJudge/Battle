@@ -1,3 +1,4 @@
+require_relative 'game'
 
 class Player
   attr_reader :name, :hp
@@ -6,10 +7,6 @@ class Player
   def initialize(name)
     @name = name
     @hp = STARTING_HP
-  end
-
-  def attack player
-    player.hit
   end
 
   def hit
