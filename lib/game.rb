@@ -2,15 +2,30 @@ require_relative 'player'
 
 class Game
 
-  attr_reader :player_one, :player_two
+
 
   def initialize(player1, player2)
-    @player_one = player1
-    @player_two = player2
+    @players = [player1, player2]
+
   end
 
   def attack player
     player.hit
+    player_turn
   end
+
+  def player_one
+    @players[0]
+  end
+
+  def player_two
+    @players[1]
+  end
+
+  private
+    def player_turn
+      @players.rotate!
+    end
+
 
 end

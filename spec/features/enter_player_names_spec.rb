@@ -5,4 +5,5 @@ feature "Battle" do
     sign_in_and_play
     expect(page).to have_content'Bart vs. Victor'
   end
+  
 end
